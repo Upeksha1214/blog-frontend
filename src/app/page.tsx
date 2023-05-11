@@ -1,6 +1,7 @@
 import Image from 'next/image'
 
 
+
 export default function Home() {
   return (
 <section className="vh-100">
@@ -33,7 +34,7 @@ export default function Home() {
               <button className="btn btn-info btn-lg btn-block" type="button">Login</button>
             </div>
 
-            <p>Don't have an account? <a href="#!" className="link-info">Register here</a></p>
+            <p>Don't have an account? <a href="http://localhost:3000/componet/register" className="link-info">Register here</a></p>
 
           </form>
 
