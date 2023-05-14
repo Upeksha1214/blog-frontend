@@ -64,7 +64,7 @@ export default function page() {
 
                         <div className="date-input">
                             <label className="date-input-label">Date-:</label>
-                            <input className="date-input-input" type="date" value="" placeholder="Select a date"/>
+                            <input className="date-input-input" type="date" placeholder="Select a date"/>
                         </div>
                         <br></br>
                         <div >
