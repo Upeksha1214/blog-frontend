@@ -21,7 +21,7 @@ export default function Home() {
             <h3 className="fw-normal mb-3 pb-3 letter-spacing: 1px;">Log in</h3>
 
             <div className="form-outline mb-4">
-              <input type="email" id="form2Example18" className="form-control form-control-lg" />
+              <input id="form2Example18" className="form-control form-control-lg" />
               <label className="form-label">User Name</label>
             </div>
 

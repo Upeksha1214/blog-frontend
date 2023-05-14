@@ -1,0 +1,17 @@
+/* #btnUpdate{
+   
+} */
+#txtSearch{
+    background-color: red;
+    position: absolute;
+    left: 240px;
+    margin-top: -60px;
+}
+
+#btnSearch{
+    
+    position: absolute;
+    left: 480px;
+    margin-top: -37px;
+
+}
