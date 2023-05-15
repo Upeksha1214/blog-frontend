@@ -97,53 +97,29 @@ return await response.json();
 }catch(error) {
   return error
 }
-
-  // fetch(`${url}/post/`, {
-  //   method: 'GET',
-  //   headers: {
-  //     'Content-Type': 'application/json',
-  //   },
-  //   body: JSON.stringify({
-
-  //   }),
-  // })
-
-  // .then((response) => {
-  //   console.debug(response);
-  //   return response.json();
-  // })
-
-  // .catch((error) => {
-  //   console.error(error);
-  // })
-  // console.log("podda")
 }
 
-export async function UpdateBlog (data){
+export async function DeleteBlog (){
 
+  try{
   fetch(`${url}/post/`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({
-
-    }),
+    
   })
 
-  .then((response) => {
-    console.debug(response);
-    // … r67t6yui
-  })
+  return await response.json();
 
-  .catch((error) => {
-    console.error(error);
-  })
+}catch(error) {
+  return error
+}
 
 }
 
 
-export async function DeleteBlog (data){
+export async function UpdateBlog (data){
 
   fetch(`${url}/post/`, {
     method: 'PATCH',
