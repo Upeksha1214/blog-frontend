@@ -12,7 +12,8 @@ export default function page() {
 		
 		<ul className="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-6">
 		<li><a className="text-sm text-gray-400 hover:text-gray-500 no-underline font-display font-bold " href="http://localhost:3000/componet/home">Home</a></li>
-			<li><a className="text-sm text-gray-400 hover:text-gray-500 no-underline font-display font-bold " href="#">My Blog</a></li>
+			<li><a className="text-sm text-gray-400 hover:text-gray-500 no-underline font-display font-bold " href="http://localhost:3000/componet/myBlog">My Blog</a></li>
+			<li><a className="text-sm text-gray-400 hover:text-gray-500 no-underline font-display font-bold " href="http://localhost:3000/componet/allBlog">All Blog</a></li>
 			<li><a className="text-sm text-gray-400 hover:text-gray-500 no-underline font-display font-bold " href="http://localhost:3000/componet/blogCreating">Blog Creating</a></li>
 
 		</ul>

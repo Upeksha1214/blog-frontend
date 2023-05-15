@@ -56,7 +56,7 @@ export async function blog (data){
       })
       .then((response) => {
         console.debug(response);
-        // …
+        // … r67t6yui
       })
       .catch((error) => {
         toast.error(error.message, {
@@ -74,4 +74,94 @@ export async function blog (data){
         });
         console.error(error);
       });
+
+}
+
+ ////////////////////////////////////////////get////////////////////////////////////////
+
+export async function GetBlog (){
+
+  try{
+  const response = await fetch(`${url}/post/`, {
+  method: 'GET',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+})
+
+// .then(response => response.json())
+// .then((data) => {return data});
+
+return await response.json();
+
+}catch(error) {
+  return error
+}
+
+  // fetch(`${url}/post/`, {
+  //   method: 'GET',
+  //   headers: {
+  //     'Content-Type': 'application/json',
+  //   },
+  //   body: JSON.stringify({
+
+  //   }),
+  // })
+
+  // .then((response) => {
+  //   console.debug(response);
+  //   return response.json();
+  // })
+
+  // .catch((error) => {
+  //   console.error(error);
+  // })
+  // console.log("podda")
+}
+
+export async function UpdateBlog (data){
+
+  fetch(`${url}/post/`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+
+    }),
+  })
+
+  .then((response) => {
+    console.debug(response);
+    // … r67t6yui
+  })
+
+  .catch((error) => {
+    console.error(error);
+  })
+
+}
+
+
+export async function DeleteBlog (data){
+
+  fetch(`${url}/post/`, {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+
+    }),
+  })
+
+  .then((response) => {
+    console.debug(response);
+    // … r67t6yui
+  })
+
+  .catch((error) => {
+    console.error(error);
+  })
+
 }
