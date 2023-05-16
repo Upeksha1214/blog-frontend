@@ -2,15 +2,14 @@
 import React, { useEffect, useState } from 'react'
 import Navbar from '../navbar/page'
 import { GetBlog } from '../../services/blogservices'
+import { UpdateBlog } from '../../services/blogservices';
 
 export default function page() {
 
-    const [authorName, setAuthorName] = useState("");
-    const [postTitle, setPostTitle] = useState("");
-    const [postBody, setPostBody] = useState("");
-    const [createdDate, setCreatedDate] = useState("");
-
-    const [count, setCount] = useState(1);
+    const [authorName,setAuthorName] = useState ("");
+    const [postTitle,setPostTitle] = useState ("");
+    const [postBody,setPostBody] = useState ("");
+    const [createdDate,setCreatedDate] = useState ("");
 
     const blogHandler = async () => {
 
@@ -19,20 +18,20 @@ export default function page() {
             postTitle: postTitle,
             postBody: postBody,
             createdDate: createdDate,
-
-        };
-
-        try {
-            const response = await GetBlog();
+            
+          };
+      
+          try {
+            const response = await UpdateBlog(blogData);
             // Handle the response as needed
             console.log(response);
-
+            
             // Clear the input fields after successful registration
-
-        } catch (error) {
+           
+          } catch (error) {
             // Handle the registration error
             console.error(error);
-        }
+          }
 
     }
 
@@ -40,7 +39,7 @@ export default function page() {
         authorName: string;
         postTitle: string;
         postBody: string;
-        createdDate: Date;
+        createdDate: string;
     }[]>([]);
 
 
@@ -86,9 +85,7 @@ export default function page() {
                             <label className="date-input-label">Date-:</label>
                             <input className="placeholder:text-slate-400 block text-white dark:bg-gray-700  border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm"
                                 type="date" placeholder="Select a date"
-                                value={new Date(item.createdDate).toLocaleString("en-US", {
-                                    dateStyle: "short",
-                                  })}
+                                value={item.createdDate}
                                 onChange={(e) => setCreatedDate(e.target.value)} />
                         </div>
 
