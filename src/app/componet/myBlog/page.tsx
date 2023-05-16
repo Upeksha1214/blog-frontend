@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import Navbar from '../navbar/page'
 import { GetBlog } from '../../services/blogservices'
 import { UpdateBlog } from '../../services/blogservices';
+import { DeleteBlog } from '../../services/blogservices';
 
 export default function page() {
 
@@ -33,6 +34,23 @@ export default function page() {
             console.error(error);
           }
 
+
+    }
+
+    const blogDelHandler = async () => {
+       try {
+            const response = await DeleteBlog();
+            // Handle the response as needed
+            console.log(response);
+            
+            // Clear the input fields after successful registration
+           
+          } catch (error) {
+            // Handle the registration error
+            console.error(error);
+          }
+
+
     }
 
     const [blog, setBlogs] = useState<{
@@ -48,9 +66,6 @@ export default function page() {
 
             GetBlog()
                 .then(res => setBlogs(res));
-
-
-
             // Clear the input fields after successful registration
 
         } catch (error) {
@@ -105,7 +120,7 @@ export default function page() {
 
                     <div>
                         <button className="items-center px-2 py-2.5 text-sm font-medium text-center text-white  rounded-lg focus:ring-4 bg-rose-600 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-rose-900"
-                        >
+                        onClick={blogDelHandler}>
                             Delete Blog
                         </button>
                     </div>
