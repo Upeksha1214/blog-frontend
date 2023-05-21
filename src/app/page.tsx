@@ -2,13 +2,12 @@
 import Image from 'next/image'
 import { useState } from 'react';
 import { login } from '../../src/app/services/login'
-import { data } from 'autoprefixer';
-
-
+import { useRouter } from 'next/navigation';
 
 export default function Home() {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
+  const router =useRouter();
 
   const loginHandler = async () => {
     const loginData = {
@@ -18,8 +17,10 @@ export default function Home() {
 
     try {
       const response = await login(loginData);
-      console.log(response);
 
+      if( response ){
+        router.push("/componet/home")
+      }
       // Clear the input fields after successful registration
       setUserName("");
       setPassword("");
@@ -76,8 +77,7 @@ export default function Home() {
                 </div>
 
                 <div className="pt-1 mb-4">
-                  <a className="btn btn-info btn-lg btn-block " type="button" href='http://localhost:3000/componet/home'
-                    onClick={loginHandler}>Login</a>
+                  <button className="btn btn-info btn-lg btn-block " type="button" onClick={loginHandler}>Login</button>
                 </div>
 
                 <p>Don't have an account? <a href="http://localhost:3000/componet/register" className="link-info">Register here</a></p>

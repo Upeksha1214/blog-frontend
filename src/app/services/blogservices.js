@@ -92,17 +92,19 @@ export async function GetBlog (){
 // .then(response => response.json())
 // .then((data) => {return data});
 
-return await response.json();
+const result=await response.json()
+console.log(result)
+return result;
 
 }catch(error) {
-  return error
+  return []
 }
 }
 
 export async function DeleteBlog (){
 
   try{
-  fetch(`${url}/post/`, {
+  fetch(`${url}/post/${data.authorName}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
@@ -121,7 +123,7 @@ export async function DeleteBlog (){
 
 export async function UpdateBlog (data){
 
-  fetch(`${url}/post/`, {
+  fetch(`${url}/post/${data.authorName}`, {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json',
